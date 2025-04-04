@@ -10,4 +10,9 @@ service CatalogService {
     entity Businesspartner as projection on external.A_BusinessPartner {
         BirthDate, BusinessPartnerBirthDateStatus
     };
+
+    entity bankpartner as projection on external.A_BusinessPartnerContact{
+        BusinessPartnerCompany,RelationshipNumber,ValidityEndDate,ValidityStartDate
+   
+    };
 }

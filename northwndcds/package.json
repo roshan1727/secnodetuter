@@ -1,5 +1,5 @@
 {
-  "name": "businessPartnerPortal",
+  "name": "northwndcds",
   "version": "1.0.0",
   "description": "A simple CAP project.",
   "repository": "<Add your repository here>",
@@ -8,40 +8,37 @@
   "dependencies": {
     "@sap-cloud-sdk/http-client": "^4.0.1",
     "@sap-cloud-sdk/resilience": "^4.0.1",
-    "@sap/cds": "^8",
+    "@sap/cds": "^8.8.1",
     "@sap/xssec": "^4",
-    "cdse": "^1.1.12",
     "express": "^4"
   },
   "devDependencies": {
     "@cap-js/cds-types": "^0.9.0",
     "@cap-js/sqlite": "^1",
-    "@sap/cds-dk": "^8.8.1"
+    "@sap/cds-dk": "^8"
   },
   "scripts": {
     "start": "cds-serve"
   },
   "cds": {
     "requires": {
-      "businesspartner": {
+      "northwind": {
         "kind": "odata",
-        "model": "srv/external/businesspartner",
-        "[businesspartner]": {
+        "model": "srv/external/northwind",
+        "[backend]": {
           "credentials": {
-            "url": "http://192.168.8.125:50100/sap/opu/odata/sap/API_BUSINESS_PARTNER",
-            "username": "aravind",
-            "password": "Aditishree@1996"
+            "url": "https://services.odata.org/Experimental/OData/OData.svc/"
           }
         },
         "[production]": {
           "credentials": {
-            "destination": "S42022-S12"
+            "destination": "northwind"
           }
         }
       },
       "[production]": {
         "auth": {
-          "kind": "xsuaa",
+          "kind": "mocked",
           "restrict_all_services": false
         }
       }

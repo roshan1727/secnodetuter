@@ -3,6 +3,7 @@
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
     <Text text="hi hello makkale"></Text>
-    <Text text="hi hello makkale"></Text>
+    <Button text="buttopn"></Button>
+    
     </Page>
 </mvc:View>
